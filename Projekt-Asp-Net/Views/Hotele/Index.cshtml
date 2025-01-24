@@ -1,0 +1,27 @@
+@model List<ProjektAspNet.Models.Entities.Hotel>
+
+<h1>Lista hoteli</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Lokalizacja</th>
+            <th>Cena za noc</th>
+            <th>Dostępne pokoje</th>
+            <th>Szczegóły</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hotel in Model)
+        {
+            <tr>
+                <td>@hotel.Nazwa</td>
+                <td>@hotel.Lokalizacja</td>
+                <td>@hotel.CenaZaNoc zł</td>
+                <td>@hotel.DostępnePokoje</td>
+                <td><a href="/Hotele/Details/@hotel.Id">Zobacz</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
